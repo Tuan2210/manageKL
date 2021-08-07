@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cửa Hàng KIM LONG</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../ICON/Font_icon/themify-icons/themify-icons.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/poper-2.9.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/index.js"></script>
+
+    <!--fontawesome-->
+    <link rel="stylesheet" href="/fontawesome-free-5.15.3-web/css/all.css">
+
+    <script>
+        // máy cắt sắt
+        let mcs1 = {
+            hinh: "../img/máy cắt sắt/mcs1.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let mcs2 = {
+            hinh: "../img/máy cắt sắt/mcs2.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let mcs3 = {
+            hinh: "../img/máy cắt sắt/mcs3.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let listmcs = [mcs1, mcs2, mcs3];
+        // let i = 0;
+        function displayMCS(maycs) {
+            let row = "<figure align='center' class='img-thumbnail' style='width: 30%;'>" +
+                "<img class='rounded w-100' height='250' src='" + maycs.hinh + "' alt='picmcs'>" +
+                "<figcaption>" +
+                "<h6 class='text-justify' style='font-weight: bold; margin-top: 20px'" +
+                "<p>Mã sản phẩm: <span>" + maycs.masp + "</span></p>" +
+                "<p>Hãng: <span>" + maycs.hang + "</span></p>" +
+                "<p style='color: red'>Giá: <span>" + maycs.gia + "&#8363;" + "</span></p>" +
+                "</h6>" +
+                "</figcaption>" +
+                "</figure>";
+            //&#8363; <=> <u>đ</u>
+
+            $('#tableMCS').append(row);
+            // let divmcs = document.querySelector("div");
+            // let newrow = divmcs.insertRow(divmcs.row.length);
+            // newrow.innerHTML = row;
+        }
+
+        //máy khoan
+        let mk1 = {
+            hinh: "../img/máy khoan/mk1.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let mk2 = {
+            hinh: "../img/máy khoan/mk2.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let mk3 = {
+            hinh: "../img/máy khoan/mk3.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let listmk = [mk1, mk2, mk3];
+        // let i = 0;
+        function displayMK(mayk) {
+            let row = "<figure align='center' class='img-thumbnail' style='width: 30%;'>" +
+                "<img class='rounded w-100' height='250' src='" + mayk.hinh + "' alt='picmcs'>" +
+                "<figcaption>" +
+                "<h6 class='text-justify' style='font-weight: bold; margin-top: 20px'" +
+                "<p>Mã sản phẩm: <span>" + mayk.masp + "</span></p>" +
+                "<p>Hãng: <span>" + mayk.hang + "</span></p>" +
+                "<p style='color: red'>Giá: <span>" + mayk.gia + "&#8363;" + "</span></p>" +
+                "</h6>" +
+                "</figcaption>" +
+                "</figure>";
+
+            $('#tableMK').append(row);
+        }
+
+        //bộ dụng cụ
+        let bdc1 = {
+            hinh: "../img/tua vít/tv1.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let bdc2 = {
+            hinh: "../img/tua vít/tv2.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let bdc3 = {
+            hinh: "../img/kiềm cắt/kc1.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let bdc4 = {
+            hinh: "../img/khóa lục giác/klg1.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "...."
+        };
+        let listbdc = [bdc1, bdc2, bdc3, bdc4];
+        // let i = 0;
+        function displayBDC(bodc) {
+            let row = "<figure align='center' class='img-thumbnail' style='width: 21.95%;'>" +
+                "<img class='rounded w-100' height='250' src='" + bodc.hinh + "' alt='picmcs'>" +
+                "<figcaption>" +
+                "<h6 class='text-justify' style='font-weight: bold; margin-top: 20px'" +
+                "<p>Mã sản phẩm: <span>" + bodc.masp + "</span></p>" +
+                "<p>Hãng: <span>" + bodc.hang + "</span></p>" +
+                "<p style='color: red'>Giá: <span>" + bodc.gia + "&#8363;" + "</span></p>" +
+                "</h6>" +
+                "</figcaption>" +
+                "</figure>";
+
+            $('#tableBDC').append(row);
+        }
+
+        //keo dán & dầu chống rỉ
+        let keo1 = {
+            hinh: "../img/keo dán xây dựng/kdxd1.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "..."
+        };
+        let keo2 = {
+            hinh: "../img/keo dán xây dựng/kdxd2.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "..."
+        };
+        let dau = {
+            hinh: "../img/dầu chống rỉ sét và bôi trơn/dầu malay.jpg",
+            masp: "...",
+            hang: "...",
+            gia: "..."
+        };
+        let listKeoDau = [keo1, keo2, dau];
+
+        function displayKD(KeoDau) {
+            let row = "<figure align='center' class='img-thumbnail' style='width: 30%;'>" +
+                "<img class='rounded w-100' height='250' src='" + KeoDau.hinh + "' alt='picmcs'>" +
+                "<figcaption>" +
+                "<h6 class='text-justify' style='font-weight: bold; margin-top: 20px'" +
+                "<p>Mã sản phẩm: <span>" + KeoDau.masp + "</span></p>" +
+                "<p>Hãng: <span>" + KeoDau.hang + "</span></p>" +
+                "<p style='color: red'>Giá: <span>" + KeoDau.gia + "&#8363;" + "</span></p>" +
+                "</h6>" +
+                "</figcaption>" +
+                "</figure>";
+
+            $('#tableKD').append(row);
+        }
+
+
+        $(document).ready(function() {
+            listmcs.forEach(displayMCS);
+            listmk.forEach(displayMK);
+            listbdc.forEach(displayBDC);
+            listKeoDau.forEach(displayKD);
+
+            //nút trở về đầu trang
+            $(window).scroll(function() {
+                if ($(this).scrollTop()) {
+                    $('#backTop').fadeIn();
+                } else {
+                    $('#backTop').fadeOut();
+                }
+            });
+            $("#backTop").click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 400); //400 là 0.4s
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div id="index" class="container">
+        <div class="row">
+            <div id="left" class="col-1">
+                <img src="../img/cuahang.jpg" alt="cuahang">
+            </div>
+            <div id="main" class="col-lg-10" style="border: 1px solid red;">
+                <!--header-->
+                <div id="header">
+                    <div class="row" style="background-color: rgb(252, 100, 33);">
+                        <div class="img-logo col-sm-4" id="logoIndex">
+                            <a href="./KL_index.html"><img src="../img/logoKL.jpg" alt="logoKL" title="logo cua hang"></a>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 12px; margin-left: 20px;">
+                            <h5><b><i>Chuyên kinh doanh :</i></b></h5>
+                            <h6>
+                                <ul type="disc">
+                                    <li>KHÓA, BẢN LỀ, CHỐT CỬA, DECAL</li>
+                                    <li>PHỤ KIỆM NHÔM, KEO DÁN SILICON - vật liệu xây dựng</li>
+                                    <li>CÁC LOẠI SƠN, MÁY VÀ DỤNG CỤ THỢ...</li>
+                                </ul>
+                            </h6>
+                        </div>
+                        <div class="col-1">
+                            <!-- <h7><b><i>Chuyên kinh doanh: </i></b></h7> -->
+                            <img src="../img/logo/dragon.jpg" alt="" width="350%" height="100%" style="margin-left: -50px;">
+                        </div>
+                    </div>
+                </div>
+                <!--menu-->
+                <div id="main-nav" class="row">
+                    <ul class="nav">
+                        <li class="nav-item active-menu"><a href="./KL_index.html" class="nav-link" id="trangchu">Trang chủ <span class="ti-home"></span></a></li>
+                        <li class="nav-item dropdown"><a href="" class="nav-link text-white dropdown-toggle" id="sanpham" onclick="location.reload('./HTML/KL_index.html')">Sản phẩm </a>
+                            <div class="dropdown-menu">
+                                <a href="./maycatsat.html" class="dropdown-item">Máy cắt sắt <img src="../img/máy cắt sắt/icon/work_building_repair_construction_tool_tool_hand_tool_electrical_tool_-22_icon-icons.com_60451.ico" alt=""></a>
+                                <a href="./maykhoan_page1.html" class="dropdown-item">Máy khoan <img src="../img/máy khoan/icon/work_building_repair_construction_tool_tool_hand_tool_electrical_tool_-23_icon-icons.com_60448.ico" alt=""></a>
+                                <a href="" class="dropdown-item">Việt-Tiệp</a>
+                                <a href="" class="dropdown-item">Keo dán xây dựng</a>
+                                <a href="" class="dropdown-item">Bộ dụng cụ <img src="../img/tua vít/icon/hand_tool_tools_work_building_repair_construction_construction_tools-91_icon-icons.com_60418.ico" alt=""></a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="./gioi-thieu.html" class="nav-link text-white" id="lienhe">Giới thiệu - Liên hệ &#9743;</a></li>
+                        <!-- <li class="nav-item"><a href="./ho-tro.html" class="nav-link text-white ">Ho tro</a></li> -->
+                        <!-- <li class="nav-item"><a href="./sitemap.html" class="nav-link text-white "><b>Sitemap</b> 🗺</a></li> -->
+                        <li class="nav-item"><a href="./gio-hang.html" class="nav-link text-white" id="giohang">Giỏ hàng 🛒</a></li>
+                    </ul>
+                    <span id="clock">
+                        <script>refreshClock();</script>
+                    </span>
+                </div>
+                <!--thanh tìm kiếm-->
+                <div id="searching" class="row">
+                    <form class="form-inline">
+                        <img src="../img/search/4016201-find-search-smart-watch_112948.ico" alt="timkiem" width="10%" height="70px">
+                        <input type="search" class="form-control" id="txtTim" placeholder="Nhập từ khóa...">
+                        <button class="btn ml-2" type="button" id="btnTim" for="txtTim"><a href=""><b>Tìm kiếm</b></a></button>
+                        <span id="tbTim" class="text-danger" style="margin-left: 10px;"></span>
+                    </form>
+                    <div id="logomxh">
+                        <a title="Facebbok" href="https://www.facebook.com/" id="fb"><img src="../img/mạng xh/fb.jpg" alt="logoFB"></a>
+                        <!-- <a href=""><i class="fab fa-facebook"></i></a> -->
+                        <a title="Messenger Facebook" href="https://www.messenger.com/" id="messfb"><img src="../img/mạng xh/mess fb.jpg" alt="logoMessFB"></a>
+                        <a title="Gmail" href="https://www.gmail.com/" id="gmail"><img src="../img/mạng xh/gmail_new_logo_icon_159149.ico" alt="logoGmail"></a>
+                        <a title="Zalo" href="https://chat.zalo.me/" id="zalo"><img src="../img/mạng xh/zalo.png" alt="logoZalo"></a>
+                    </div>
+                </div>
+
+                <!--content-->
+                <div id="content" class="row">
+                    <!--slide-->
+                    <div id="slider" class="carousel slide" data-ride="carousel">
+                        <ul class="carousel-indicators" style="margin-bottom: 45px;">
+                            <li data-target="#slider" data-slide-to="0" class="active"></li>
+                            <li data-target="#slider" data-slide-to="1"></li>
+                            <li data-target="#slider" data-slide-to="2"></li>
+                        </ul>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="#"><img src="../img/chKL.jpg" alt=""></a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#"><img src="../img/máy khoan/mk3.jpg" alt=""></a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#"><img src="../img/viet-tiep/tay nắm cửa/10.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#slider" data-slide="prev" style="width: 75px;">
+                            <span class="carousel-control-prev-icon" style="background-color: black; height: 30px; width: 30px;"></span>
+                            <!-- <span>◀</span> -->
+                            <!-- ◀▶✅◀▶◁▷<> -->
+                        </a>
+                        <a class="carousel-control-next" href="#slider" data-slide="next" style="width: 75px;">
+                            <span class="carousel-control-next-icon" style="background-color: black; height: 30px; width: 30px;"></span>
+                            <!-- <span>▶</span> -->
+                        </a>
+                    </div>
+
+                    <hr class="row">
+                    <!--chi tiết sản phẩm-->
+                    <div id="chitietsp" class="col-lg-12">
+                        <div id="maycatsat">
+                            <a href="./maycatsat.html" class="row">
+                                <img src="../img/máy cắt sắt/icon/4137180-building-construction-industry-saw_114067.ico" alt="">
+                                <h5 class="col-4">MÁY CẮT SẮT | xem tất cả</h5>
+                            </a>
+                            <div id="tableMCS" class="row">
+
+                            </div>
+                            <hr class="row">
+                        </div>
+                        <div id="maykhoan">
+                            <a href="./maykhoan_page1.html" class="row">
+                                <img src="../img/máy khoan/icon/4137139-building-construction-drill-industry_114077.ico" alt="">
+                                <h5 class="col-4">MÁY KHOAN | xem tất cả</h5>
+                            </a>
+                            <div id="tableMK" class="row">
+
+                            </div>
+                            <hr class="row">
+                        </div>
+                        <div id="bodungcu">
+                            <a href="./bodungcu.html" class="row">
+                                <img src="../img/tua vít/icon/iconfinder-technologymachineelectronicdevice38-4026422_113331.ico" alt="">
+                                <h5 class="col-4">BỘ DỤNG CỤ | xem tất cả</h5>
+                            </a>
+                            <div id="tableBDC" class="row">
+
+                            </div>
+                            <hr class="row">
+                        </div>
+                        <div id="keovadau">
+                            <a href="./keo_dau.html" class="row">
+                                <img src="../img/dầu chống rỉ sét và bôi trơn/Bottle_of_Water_icon-icons.com_68778.ico" alt="">
+                                <h5 class="col-6" style="vertical-align: middle; margin-left: 15%;">KEO DÁN & DẦU CHỐNG SÉT | xem tất cả</h5>
+                            </a>
+                            <div id="tableKD" class="row" style="margin-bottom: -16px;">
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--footer-->
+                <div id="footer">
+                    <div class="row">
+                        <div class="col-4">
+                            <h5>THÔNG TIN DOANH NGHIỆP</h5>
+                            <p>Tên hợp tác xã:...</p>
+                            <p>Người đại diện:...</p>
+                            <p>Địa chỉ:...</p>
+                            <p>SĐT:...</p>
+                            <p>Mã số thuế:...</p>
+                            <p>Số giấy chứng nhận đăng ký kinh doanh: Quyết định thành lập số: 110548578 Do phòng ĐKKD phòng ĐKKD Sở kế hoạch và đầu tư Long An Cấp ngày: 10/09/2002 Địa chỉ trụ sở chính: Số 7, Khu Phố 6, Thị Trấn Bến Lức, Tỉnh Long An:...</p>
+                        </div>
+                        <div class="col-4">
+                            <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                            <a href="">Hướng dẫn mua hàng</a><br><br>
+                            <a href="">Chính sách đổi trả hàng</a><br><br>
+                            <a href="">Chính sách bảo mật</a><br><br>
+                            <a href="">Điều khoản sử dụng</a><br><br>
+                            <a href="">Quyền lợi khách hàng và nhà bán hàng</a>
+                        </div>
+                        <div class="col-4">
+                            <h5>LIÊN HỆ</h5>
+                            <p>Địa chỉ:...</p>
+                            <p>Hotline:...</p>
+                            <p>Email:...</p>
+                        </div>
+                        <div class="col-lg-12" style="background-color: rgb(252, 100, 33);">
+                            <p>&copy; Copyright .... - 2021 | Kim Long | Design & Development by Kim Long industrial cooperative group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="right" class="col-1">
+                <img src="../img/cuahang.jpg" alt="cuahang">
+            </div>
+            <!-- <div id="up">
+                <img src="../img/arrow_circle_up_icon_152705.ico" id="scrollToTop" alt="upicon">
+            </div> -->
+            <div id="backTop">
+                <div class="ti-angle-up"></div>
+                <span>Trở về đầu trang</span>
+            </div>
+        </div>
+    </div>
+
+    <!--Optional JavaScript-->
+    <!--jQuery first, then Popper.js, then Bootstrap JS-->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script> -->
+
+</body>
+
+</html>

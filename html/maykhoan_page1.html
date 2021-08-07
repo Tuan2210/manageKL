@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kim Long - máy khoan</title>
+    <!--Bootstrap CSS-->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/css/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-4.6.0-dist/css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/chitietsp.css">
+    <link rel="stylesheet" href="/ICON/Font_icon/themify-icons/themify-icons.css">
+    <!-- <link rel="stylesheet" href="/html/maykhoan_html/maykhoan_page1.html"> -->
+
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/poper-2.9.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/index.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+
+    <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
+    <!-- <script src="https://pagination.js.org/dist/2.1.5/pagination.js"></script> -->
+    <script>
+        //mk page1
+        let mk1 = {
+            hinh: "/img/máy khoan/mk1.jpg",
+            tensp: "MÁY KHOAN BÊ TÔNG PIN Lithium 20V TOTAL TRHLI1601",
+            thuonghieu: "Total",
+            xuatxu: "Trung Quốc",
+            modelnumber: "TRHLI1601",
+            duongkinh: "16mm",
+            trongluong: "1kg",
+            congsuat: "700W",
+            nguondienap: "20V",
+            tocdokhoan: "0 - 900 vòng/phút (rpm)", //tốc độ ko tải = tốc độ khoan ?
+            mausac: "xanh trắng",
+            baohanh: "3 tháng",
+            giasp: "1.000.000"
+        }
+        let mk2 = {
+            hinh: "/img/máy khoan/mk2.jpg",
+            tensp: "máy khoan2",
+            thuonghieu: "a2",
+            xuatxu: "b2",
+            modelnumber: "c2",
+            duongkinh: "d2",
+            trongluong: "e2",
+            congsuat: "f2",
+            nguondienap: "g2",
+            tocdokhoan: "h2",
+            mausac: "i2",
+            baohanh: "j2",
+            giasp: "1.100.000"
+        }
+        let mk3 = {
+            hinh: "/img/máy khoan/mk3.jpg",
+            tensp: "máy khoan3",
+            thuonghieu: "a3",
+            xuatxu: "b3",
+            modelnumber: "c3",
+            duongkinh: "d3",
+            trongluong: "e3",
+            congsuat: "f3",
+            nguondienap: "g3",
+            tocdokhoan: "h3",
+            mausac: "i3",
+            baohanh: "j3",
+            giasp: "1.200.000"
+        }
+        let mk4 = {
+            hinh: "/img/máy khoan/mk4.jpg",
+            tensp: "máy khoan4",
+            thuonghieu: "a4",
+            xuatxu: "b4",
+            modelnumber: "c4",
+            duongkinh: "d4",
+            trongluong: "e4",
+            congsuat: "f4",
+            nguondienap: "g4",
+            tocdokhoan: "h4",
+            mausac: "i4",
+            baohanh: "j4",
+            giasp: "1.300.000"
+        }
+        let mk5 = {
+            hinh: "/img/máy khoan/mk5.jpg",
+            tensp: "máy khoan5",
+            thuonghieu: "a5",
+            xuatxu: "b5",
+            modelnumber: "c5",
+            duongkinh: "d5",
+            trongluong: "e5",
+            congsuat: "f5",
+            nguondienap: "g5",
+            tocdokhoan: "h5",
+            mausac: "i5",
+            baohanh: "j5",
+            giasp: "1.400.000"
+        }
+        let listMKpage1 = [mk1, mk2, mk3, mk4, mk5];
+
+        function displayMK(mayk) {
+            let row = "<figure class='motasp row'>" +
+                "<figcaption class='motasp-img col-5'>" + "<img src='" + mayk.hinh + "' alt='picmk1'>" + "</figcaption>" +
+                "<figcaption class='motasp-detail col-7'>" +
+                "<h4 style='margin-left: -15px'>" + mayk.tensp + "</h4>" +
+
+                "<h6 class='row'>" +
+                "<ul type='disk' class='col-6'>" +
+                "<li>Thương hiệu: " + mayk.thuonghieu + "</li>" +
+                "<li>Xuất xứ: " + mayk.xuatxu + "</li>" +
+                "<li>Model number: " + mayk.modelnumber + "</li>" +
+                "<li>Đường kính: " + mayk.duongkinh + "</li>" +
+                "<li>Trọng lượng: " + mayk.trongluong + "</li>" +
+                "</ul>" +
+                "<ul type='disk' class='col-6'>" +
+                "<li>Công suất: " + mayk.congsuat + "</li>" +
+                "<li>Nguồn điện áp: " + mayk.nguondienap + "</li>" +
+                "<li>Tốc độ  khoan: " + mayk.tocdokhoan + "</li>" +
+                "<li>Màu sắc: " + mayk.mausac + "</li>" +
+                "<li>Bảo hành: " + mayk.baohanh + "</li>" +
+                "</ul>" +
+                "</h6>" +
+
+                "<div id='motachitiet'>" +
+                "<p style='font-weight: bold; margin-bottom: 0px; margin-left: -10px;'>Mô tả chi tiết:</p>" +
+
+                "<p>" +
+                "- Máy khoan vặn vít dùng pin Li-ion Total TRHLI1601 một dụng cụ cầm tay chính hãng Total có khả năng khoan gỗ, kim loại, vật liệu gốm nhựa..." +
+                "được sản xuất trên dây chuyên công nghệ hiện đại bằng những vật liệu cao cấp nhất để đảm bảo hiệu quả hoạt động cũng như độ bền sản phẩm trước khi đến tay người tiêu dùng." +
+                "</p>" +
+
+                "<p>" +
+                "- Máy khoan bê tông khác thì Total TRHLI1601 có khả năng khoan/khoét lỗ trên các chất liệu thông dụng như gỗ, bê tông, sắt không hề" +
+                "thua kém máy khoan điện cầm tay có công suất 700W. Bạn sẽ không còn phải lo về việc khi đang sử dụng mà hết pin làm ảnh hưởng đến" +
+                "công việc nữa, vì có thể mua thêm bao nhiêu pin cũng được (1 viên pin Lithium-ion Total 20V có mức giá dưới 500k)." +
+                "Chỉ cần sạc pin đủ sau mỗi lần làm là được rồi (đi làm ở xa thì mang theo 2 - 3 cục), sản phẩm được đựng trong hộp thuận tiện cho việc" +
+                "bảo quản và mang theo khi cần dùng tới, bộ sạc pin dành cho máy này thì có kiểu dáng nhỏ gọn nhưng cho tốc độ sạc đầy pin nhanh!" +
+                "</p>" +
+                "</div>" +
+
+                "<div id='dathang' class='row'>" +
+                "<label for='' style='opacity: 0.5; font-weight: bold; margin-top: 5px'>Giá:</label>" +
+                "<h4 style='margin-left: 25px;'>" + mayk.giasp + "&#8363;</h4>" +
+                "<h6 class='row'>" +
+                "<label for='soluongdat' style='margin-top: 3px;'>Số lượng:</label>" +
+                "<p>" +
+                "<button class='ti-minus'></button>" +
+                "<input id='soluongdat' type='text' value='1'>" +
+                "<button class='ti-plus'></button>" +
+                "</p>" +
+                "</h6>" +
+                "<h5 class='row'>" +
+                "<button class='ti-shopping-cart col-5'>&nbsp;Thêm vào giỏ hàng</button>" +
+                "<button class='col-5' id='btnmua'>Mua ngay</button>" +
+                "</h5>" +
+                "</div>" +
+
+                "</figcaption>" +
+                "</figure>" +
+                "<hr>";
+            $('#mkpage1').append(row);
+        }
+
+
+        $(document).ready(function() {
+            listMKpage1.forEach(displayMK);
+
+            //nút trở về đầu trang
+            $(window).scroll(function() {
+                if ($(this).scrollTop()) {
+                    $('#backTop').fadeIn();
+                } else {
+                    $('#backTop').fadeOut();
+                }
+            });
+            $("#backTop").click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 400); //400 là 0.4s
+            });
+
+            //nút prev|next số trang - pagination
+            // $('.ti-angle-right').click(function() {
+            //     $('.pagination').location('.page-item .active').next().addClass('active');
+            //     $('.pagination').location('.page-item .active').prev().removeClass('active');
+            // })
+            // $('.ti-angle-left').click(function() {
+            //     $('.pagination').location('.page-item .active').prev().addClass('active');
+            //     $('.pagination').location('.page-item .active').next().removeClass('active');
+            // })
+
+            // (function(name) {
+            //     var container = $('#pagenumber-' + name);
+            //     var sources = function() {
+            //         var result = [];
+            //         for (var i = 1; i < 196; i++) {
+            //             result.push(i);
+            //         }
+            //         return result;
+            //     }();
+            //     var options = {
+            //         dataSource: sources,
+            //         callback: function(response, pagination) {
+            //             window.console && console.log(response, pagination);
+            //             var dataHtml = '#pagenumber';
+            //         }
+            //     };
+            //     container.addHook('beforeInit', function() {
+            //         window.console && console.log('beforeInit...');
+            //     });
+            //     container.pagination(options);
+            //     container.addHook('beforePageOnClick', function() {
+            //         window.console && console.log('beforePageOnClick...');
+            //     });
+            // })('demo1');
+
+            // $('#pagenumber').pagination({
+            //     dataSource: ['./maykhoan_page1.html', './maykhoan_page2.html'],
+            //     pageNumber: 1,
+            //     callback: function(data, pagination) {
+            //         var html = template(data);
+            //         dataContainer.html(html);
+            //     }
+            // })
+
+            // $('#demo').pagination({
+            //     dataSource: 'https://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?',
+            //     locator: 'items',
+            //     totalNumberLocator: function(response) {
+            //         // you can return totalNumber by analyzing response content
+            //         return Math.floor(Math.random() * (1000 - 100)) + 100;
+            //     },
+            //     pageSize: 20,
+            //     ajax: {
+            //         beforeSend: function() {
+            //             dataContainer.html('Loading data from flickr.com ...');
+            //         }
+            //     },
+            //     callback: function(data, pagination) {
+            //         // template method of yourself
+            //         var html = template(data);
+            //         dataContainer.html(html);
+            //     }
+            // })
+
+            // ({
+            //     "items": [{
+            //         "link": "./maykhoan_page1.html"
+            //     }, {
+            //         "link": "./maykhoan_page2.html"
+            //     }]
+            // })
+            $('#pagenumber a:first').addClass('active');
+            $("a.ti-angle-right").click(function() {
+                // var $toHighlight = $('.active').next().length > 0 ? $('.active').next() : $('#pagenumber a').first();
+                // $('.active').removeClass('active');
+                // $toHighlight.addClass('active');
+                location.assign('./maykhoan_page2.html');
+
+                // window.location.href = $('.active').next().children('a').prop('href');
+
+                // $('#pagenumber').find('.active').next().trigger("click");
+
+                // (ok) // const last = $(this).siblings().last(); 
+                // if (!last.hasClass('active')) {
+                //     const active = $(this).siblings('.active');
+                //     const nextItem = active.next();
+                //     const link = nextItem.children('a').prop('href');
+                //     active.removeClass('active');
+                //     nextItem.addClass('active');
+                // window.location.href = link;
+                // }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="index" class="container">
+        <div class="row">
+            <!-- <div id="left" class="col-1">
+                    <img src="../img/cuahang.jpg" alt="cuahang">
+                </div> -->
+            <div id="main">
+                <!--header-->
+                <div id="header">
+                    <div class="row" style="background-color: rgb(252, 100, 33); padding-bottom: 10px;">
+                        <div class="img-logo col-sm-4" id="logoIndex">
+                            <a href="../KL_index.html"><img src="/img/logoKL.jpg" alt="logoKL" title="logo cua hang"></a>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 12px; margin-left: 20px;">
+                            <!-- <div class="col-lg-12" style=";"> -->
+                            <h5><b><i>Chuyên kinh doanh :</i></b></h5>
+                            <h6>
+                                <ul type="disc">
+                                    <li>KHÓA, BẢN LỀ, CHỐT CỬA, DECAL</li>
+                                    <li>PHỤ KIỆM NHÔM, KEO DÁN SILICON - vật liệu xây dựng</li>
+                                    <li>CÁC LOẠI SƠN, MÁY VÀ DỤNG CỤ THỢ...</li>
+                                </ul>
+                            </h6>
+                            <!-- </div> -->
+                        </div>
+                        <div class="col-1">
+                            <!-- <h7><b><i>Chuyên kinh doanh: </i></b></h7> -->
+                            <img src="/img/logo/dragon.jpg" alt="" width="350%" height="100%" style="margin-left: -120px; margin-top: -20px;">
+                        </div>
+                    </div>
+                </div>
+
+                <!--menu-->
+                <div id="main-nav" class="row" style="margin-top: -45px;">
+                    <ul class="nav">
+                        <li class="nav-item"><a href="./KL_index.html" class="nav-link text-white" id="trangchu">Trang chủ <span class="ti-home"></span></a></li>
+                        <li class="nav-item active-menu dropdown"><a href="" class="nav-link dropdown-toggle" id="sanpham" onclick="location.reload('./HTML/KL_index.html')">Sản phẩm </a>
+                            <div class="dropdown-menu">
+                                <a href="./maycatsat.html" class="dropdown-item">Máy cắt sắt <img src="../img/máy cắt sắt/icon/work_building_repair_construction_tool_tool_hand_tool_electrical_tool_-22_icon-icons.com_60451.ico" alt=""></a>
+                                <a href="./maykhoan_page1.html" class="dropdown-item">Máy khoan <img src="../img/máy khoan/icon/work_building_repair_construction_tool_tool_hand_tool_electrical_tool_-23_icon-icons.com_60448.ico" alt=""></a>
+                                <a href="" class="dropdown-item">Việt-Tiệp</a>
+                                <a href="" class="dropdown-item">Keo dán xây dựng</a>
+                                <a href="" class="dropdown-item">Bộ dụng cụ <img src="/img/tua vít/icon/hand_tool_tools_work_building_repair_construction_construction_tools-91_icon-icons.com_60418.ico" alt=""></a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="../gioi-thieu.html" class="nav-link text-white" id="lienhe">Giới thiệu - Liên hệ &#9743;</a></li>
+                        <!-- <li class="nav-item"><a href="./ho-tro.html" class="nav-link text-white ">Ho tro</a></li> -->
+                        <!-- <li class="nav-item"><a href="./sitemap.html" class="nav-link text-white "><b>Sitemap</b> 🗺</a></li> -->
+                        <li class="nav-item"><a href="../gio-hang.html" class="nav-link text-white" id="giohang">Giỏ hàng 🛒</a></li>
+                    </ul>
+                    <span id="clock">
+                            <script>refreshClock();</script>
+                        </span>
+                </div>
+
+                <!--thanh tìm kiếm-->
+                <div id="searching" class="row">
+                    <form class="form-inline">
+                        <img src="/img/search/4016201-find-search-smart-watch_112948.ico" alt="timkiem" width="10%" height="70px">
+                        <input type="search" class="form-control" id="txtTim" placeholder="Nhập từ khóa..." style="width: 353px;">
+                        <button class="btn ml-2" type="button" id="btnTim" for="txtTim"><a href=""><b>Tìm kiếm</b></a></button>
+                        <span id="tbTim" class="text-danger" style="margin-left: 10px;"></span>
+                    </form>
+                    <div id="logomxh">
+                        <a title="Facebook" href="https://www.facebook.com/" id="fb"><img src="/img/mạng xh/fb.jpg" alt="logoFB"></a>
+                        <!-- <a href=""><i class="fab fa-facebook"></i></a> -->
+                        <a title="Messenger Facebook" href="https://www.messenger.com/" id="messfb"><img src="/img/mạng xh/mess fb.jpg" alt="logoMessFB"></a>
+                        <a title="Gmail" href="https://www.gmail.com/" id="gmail"><img src="/img/mạng xh/gmail_new_logo_icon_159149.ico" alt="logoGmail"></a>
+                        <a title="Zalo" href="https://chat.zalo.me/" id="zalo"><img src="/img/mạng xh/zalo.png" alt="logoZalo"></a>
+                    </div>
+                </div>
+
+                <!--content-->
+                <div id="content" class="row">
+                    <!--chi tiết sản phẩm-->
+                    <div id="chitietsp" style="padding-top: 10px;" class="col-lg-12">
+                        <div id="rowtitle" class="row">
+                            <div id="maplink" class="row" style="margin-left: 0px;">
+                                <a href="./KL_index.html">
+                                    <h6>&nbsp;Trang chủ</h6>
+                                </a>
+                                <h6 style="color: #31caa6;">&nbsp;/</h6>
+                                <a href="./maykhoan.html">
+                                    <h6>&nbsp;Máy khoan</h6>
+                                </a>
+                            </div>
+                            <div class="card-title">
+                                <h5><img src="/img/máy khoan/icon/3605335-carpentry-drill-drilling-industry-machine-repair-tool_107848.ico" alt="" style="margin-right: 8px;"><i>MÁY KHOAN</i></h5>
+                            </div>
+                        </div>
+                        <!--máy khoan trang 1-->
+                        <div id="mkpage1" style="margin-top: 20px;">
+                            <!-- <div class="motasp row">
+                                <div class="motasp-img col-5"><img src="../img/máy khoan/mk1.jpg" alt=""></div>
+                                <div class="motasp-detail col-7">
+                                    <h3 style="margin-left: -15px;">MÁY KHOAN</h3>
+                                    <h6 class="row">
+                                        <ul type="disk" class="col-6">
+                                            <li>Thương hiệu:</li>
+                                            <li>Xuất xứ:</li>
+                                            <li>Model number:</li>
+                                            <li>Đường kính:</li>
+                                            <li>Trọng lượng:</li>
+                                        </ul>
+                                        <ul type="disk" class="col-6">
+                                            <li>Công suất:</li>
+                                            <li>Nguồn điện áp:</li>
+                                            <li>Tốc độ khoan:</li>
+                                            <li>Màu sắc:</li>
+                                            <li>Bảo hành:</li>
+                                        </ul>
+                                    </h6>
+                                    <div id="motachitiet">
+                                        <p style="font-weight: bold; margin-bottom: 0px; margin-left: -10px;">Mô tả chi tiết:</p>
+                                        <p>
+                                            - Máy khoan vặn vít dùng pin Li-ion Total TRHLI1601 một dụng cụ cầm tay chính hãng Total có khả năng khoan gỗ, kim loại, vật liệu gốm nhựa... được sản xuất trên dây chuyên công nghệ hiện đại bằng những vật liệu cao cấp nhất để đảm bảo hiệu quả hoạt động
+                                            cũng như độ bền sản phẩm trước khi đến tay người tiêu dùng.
+                                        </p>
+                                        <p>
+                                            - Máy khoan bê tông khác thì Total TRHLI1601 có khả năng khoan/khoét lỗ trên các chất liệu thông dụng như gỗ, bê tông, sắt không hề thua kém máy khoan điện cầm tay có công suất 700W. Bạn sẽ không còn phải lo về việc khi đang sử dụng mà hết pin làm ảnh
+                                            hưởng đến công việc nữa, vì có thể mua thêm bao nhiêu pin cũng được (1 viên pin Lithium-ion Total 20V có mức giá dưới 500k). Chỉ cần sạc pin đủ sau mỗi lần làm là được rồi (đi làm ở xa thì mang theo 2 - 3 cục),
+                                            sản phẩm được đựng trong hộp thuận tiện cho việc bảo quản và mang theo khi cần dùng tới, bộ sạc pin dành cho máy này thì có kiểu dáng nhỏ gọn nhưng cho tốc độ sạc đầy pin nhanh!
+                                        </p>
+                                    </div>
+                                    <div id="dathang" class="row">
+                                        <h4 style="margin-left: 25px;">1.000.000 &#8363;</h4>
+                                        <h6 class="row">
+                                            <label for="soluongdat" style="margin-top: 3px;">Số lượng:</label>
+                                            <p>
+                                                <button class="ti-minus"></button>
+                                                <input id="soluongdat" type="text" value="1">
+                                                <button class="ti-plus"></button>
+                                            </p>
+                                        </h6>
+                                        <h5 class="row">
+                                            <button class="ti-shopping-cart col-5">&nbsp;Thêm vào giỏ hàng</button>
+                                            <button class="col-5" id="btnmua">Mua ngay</button>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="motasp row">
+                                <div class="motasp-img col-5"><img src="../img/máy cắt sắt/mcs2.jpg" alt=""></div>
+                                <div class="motasp-detail col-7">
+                                    <p>..</p>
+                                    <p>
+                                        ... <br> ....
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="motasp row">
+                                <div class="motasp-img col-5"><img src="../img/máy cắt sắt/mcs3.jpg" alt=""></div>
+                                <div class="motasp-detail col-7">
+                                    <p>..</p>
+                                    <p>
+                                        ... <br> ....
+                                    </p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--số trang-->
+                    <div id="pagination" style="margin: 10px auto;">
+                        <ul class="row" type="none">
+                            <li class="page-item disabled">
+                                <!-- <a class="page-link ti-angle-double-left" href="#"></a> -->
+                                <span class="page-link" style="font-size: 30px; margin-top: -12px;">&laquo;</span>
+                            </li>
+                            <li class="page-item disabled">
+                                <span class="page-link ti-angle-left"></span>
+                            </li>
+                            <ul class="pagenumber row" type="none">
+                                <li class="page-item active">
+                                    <span class="page-link" style="border-radius: 50%;">1</span>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="./maykhoan_page2.html" style="border-radius: 50%;">2</a></li>
+                                <li class="page-item"><a class="page-link" href="" style="border-radius: 50%;">3</a></li>
+                            </ul>
+                            <li class="page-item">
+                                <a class="page-link ti-angle-right"></a>
+                            </li>
+                            <li class="page-item">
+                                <!-- <a class="page-link ti-angle-double-right" href="#"></a> -->
+                                <a href="" class="page-link" style="font-size: 30px; margin-top: -12px;">&raquo;</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--footer-->
+                <div id="footer">
+                    <div class="row">
+                        <div class="col-4">
+                            <h5>THÔNG TIN DOANH NGHIỆP</h5>
+                            <p>Tên hợp tác xã:...</p>
+                            <p>Người đại diện:...</p>
+                            <p>Địa chỉ:...</p>
+                            <p>SĐT:...</p>
+                            <p>Mã số thuế:...</p>
+                            <p>Số giấy chứng nhận đăng ký kinh doanh: Quyết định thành lập số: 110548578 Do phòng ĐKKD phòng ĐKKD Sở kế hoạch và đầu tư Long An Cấp ngày: 10/09/2002 Địa chỉ trụ sở chính: Số 7, Khu Phố 6, Thị Trấn Bến Lức, Tỉnh Long An:...</p>
+                        </div>
+                        <div class="col-4">
+                            <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                            <a href="">Hướng dẫn mua hàng</a><br><br>
+                            <a href="">Chính sách đổi trả hàng</a><br><br>
+                            <a href="">Chính sách bảo mật</a><br><br>
+                            <a href="">Điều khoản sử dụng</a><br><br>
+                            <a href="">Quyền lợi khách hàng và nhà bán hàng</a>
+                        </div>
+                        <div class="col-4">
+                            <h5>LIÊN HỆ</h5>
+                            <p>Địa chỉ:...</p>
+                            <p>Hotline:...</p>
+                            <p>Email:...</p>
+                        </div>
+                        <div class="col-lg-12" style="background-color: rgb(252, 100, 33);">
+                            <p>&copy; Copyright .... - 2021 | Kim Long | Design & Development by Kim Long industrial cooperative group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div id="right" class="col-1">
+                    <img src="../img/cuahang.jpg" alt="cuahang">
+                </div> -->
+            <!-- <div id="up">
+                    <img src="../img/arrow_circle_up_icon_152705.ico" id="scrollToTop" alt="upicon">
+                </div> -->
+            <div id="backTop">
+                <div class="ti-angle-up" style="right: 8px;"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!--Optional JavaScript-->
+    <!--jQuery first, then Popper.js, then Bootstrap JS-->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+</body>
+
+</html>
