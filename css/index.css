@@ -348,3 +348,11 @@
     font-size: 18px;
     margin-top: 15px;
 }
+
+#footer span {
+    opacity: 0.6;
+}
+
+#footer #hotro {
+    text-align: center;
+}
