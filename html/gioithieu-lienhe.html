@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kim Long - máy khoan</title>
+    <!--Bootstrap CSS-->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="../css/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-4.6.0-dist/css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/chitietsp.css">
+    <link rel="stylesheet" href="../ICON/Font_icon/themify-icons/themify-icons.css">
+    <!-- <link rel="stylesheet" href="/html/maykhoan_html/maykhoan_page1.html"> -->
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/poper-2.9.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/index.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+
+    <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
+    <!-- <script src="https://pagination.js.org/dist/2.1.5/pagination.js"></script> -->
+    <script>
+        let listMKpage2 = [mk6, mk7];
+
+        $(document).ready(function() {
+            listMKpage2.forEach(displayMK);
+
+            //nút trở về đầu trang
+            $(window).scroll(function() {
+                if ($(this).scrollTop()) {
+                    $('#backTop').fadeIn();
+                } else {
+                    $('#backTop').fadeOut();
+                }
+            });
+            $("#backTop").click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 400); //400 là 0.4s
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="index" class="container">
+        <div class="row">
+            <!-- <div id="left" class="col-1">
+                    <img src="../img/cuahang.jpg" alt="cuahang">
+                </div> -->
+            <div id="main">
+                <!--header-->
+                <div id="header">
+                    <div class="row" style="background-color: rgb(252, 100, 33); padding-bottom: 10px;">
+                        <div class="img-logo col-sm-4" id="logoIndex">
+                            <a href="../KL_index.html"><img src="../img/logoKL.jpg" alt="logoKL" title="logo cua hang"></a>
+                        </div>
+                        <div class="col-md-6" style="margin-top: 12px; margin-left: 20px;">
+                            <!-- <div class="col-lg-12" style=";"> -->
+                            <h5><b><i>Chuyên kinh doanh :</i></b></h5>
+                            <h6>
+                                <ul type="disc">
+                                    <li>KHÓA, BẢN LỀ, CHỐT CỬA, DECAL</li>
+                                    <li>PHỤ KIỆM NHÔM, KEO DÁN SILICON - vật liệu xây dựng</li>
+                                    <li>CÁC LOẠI SƠN, MÁY VÀ DỤNG CỤ THỢ...</li>
+                                </ul>
+                            </h6>
+                            <!-- </div> -->
+                        </div>
+                        <div class="col-1">
+                            <!-- <h7><b><i>Chuyên kinh doanh: </i></b></h7> -->
+                            <img src="../img/logo/dragon.jpg" alt="" width="350%" height="100%" style="margin-left: -120px; margin-top: -20px;">
+                        </div>
+                    </div>
+                </div>
+
+                <!--menu-->
+                <div id="main-nav" class="row" style="margin-top: -45px;">
+                    <ul class="nav">
+                        <li class="nav-item"><a href="./KL_index.html" class="nav-link text-white" id="trangchu">Trang chủ <span class="ti-home"></span></a></li>
+                        <li class="nav-item dropdown"><a href="" class="nav-link text-white dropdown-toggle" id="sanpham" onclick="location.reload('./HTML/KL_index.html')">Sản phẩm </a>
+                            <div class="dropdown-menu">
+                                <a href="./maycatsat.html" class="dropdown-item">Máy cắt sắt <img src="../img/máy cắt sắt/icon/work_building_repair_construction_tool_tool_hand_tool_electrical_tool_-22_icon-icons.com_60451.ico" alt=""></a>
+                                <a href="./maykhoan_page1.html" class="dropdown-item">Máy khoan <img src="../img/máy khoan/icon/work_building_repair_construction_tool_tool_hand_tool_electrical_tool_-23_icon-icons.com_60448.ico" alt=""></a>
+                                <a href="" class="dropdown-item">Việt-Tiệp</a>
+                                <a href="" class="dropdown-item">Keo dán xây dựng</a>
+                                <a href="" class="dropdown-item">Bộ dụng cụ <img src="/img/tua vít/icon/hand_tool_tools_work_building_repair_construction_construction_tools-91_icon-icons.com_60418.ico" alt=""></a>
+                            </div>
+                        </li>
+                        <li class="nav-item active-menu"><a href="./gioithieu-lienhe.html" class="nav-link" id="lienhe">Giới thiệu - Liên hệ &#9743;</a></li>
+                        <!-- <li class="nav-item"><a href="./ho-tro.html" class="nav-link text-white ">Ho tro</a></li> -->
+                        <!-- <li class="nav-item"><a href="./sitemap.html" class="nav-link text-white "><b>Sitemap</b> 🗺</a></li> -->
+                        <li class="nav-item"><a href="../gio-hang.html" class="nav-link text-white" id="giohang">Giỏ hàng 🛒</a></li>
+                    </ul>
+                    <span id="clock">
+                            <script>refreshClock();</script>
+                        </span>
+                </div>
+
+                <!--thanh tìm kiếm-->
+                <div id="searching" class="row">
+                    <form class="form-inline">
+                        <img src="../img/search/4016201-find-search-smart-watch_112948.ico" alt="timkiem" width="10%" height="70px">
+                        <input type="search" class="form-control" id="txtTim" placeholder="Nhập từ khóa..." style="width: 353px;">
+                        <button class="btn ml-2" type="button" id="btnTim" for="txtTim"><a href=""><b>Tìm kiếm</b></a></button>
+                        <span id="tbTim" class="text-danger" style="margin-left: 10px;"></span>
+                    </form>
+                    <div id="logomxh">
+                        <a title="Facebook" href="https://www.facebook.com/" id="fb"><img src="../img/mạng xh/fb.jpg" alt="logoFB"></a>
+                        <!-- <a href=""><i class="fab fa-facebook"></i></a> -->
+                        <a title="Messenger Facebook" href="https://www.messenger.com/" id="messfb"><img src="../img/mạng xh/mess fb.jpg" alt="logoMessFB"></a>
+                        <a title="Gmail" href="https://www.gmail.com/" id="gmail"><img src="../img/mạng xh/gmail_new_logo_icon_159149.ico" alt="logoGmail"></a>
+                        <a title="Zalo" href="https://chat.zalo.me/" id="zalo"><img src="../img/mạng xh/zalo.png" alt="logoZalo"></a>
+                    </div>
+                </div>
+
+                <!--content-->
+                <div id="content" class="row">
+                    <!--chi tiết sản phẩm-->
+                    <div id="chitietsp" style="padding-top: 10px;" class="col-lg-12">
+                        <div id="rowtitle" class="row">
+                            <div id="maplink" class="row" style="margin-left: 0px;">
+                                <a href="./KL_index.html">
+                                    <h6>&nbsp;Trang chủ</h6>
+                                </a>
+                                <h6 style="color: #31caa6;">&nbsp;/</h6>
+                                <a href="./gioithieu-lienhe.html">
+                                    <h6>&nbsp;Giới thiệu - Liên hệ</h6>
+                                </a>
+                            </div>
+                        </div>
+                        <!--máy khoan trang 1-->
+                        <div id="mkpage2" style="margin-top: 20px;">
+                        </div>
+                    </div>
+                </div>
+
+                <!--footer-->
+                <div id="footer">
+                    <div class="row">
+                        <div id="thongtindn" class="col-6">
+                            <h5>THÔNG TIN DOANH NGHIỆP</h5>
+                            <p><span>Tên hợp tác xã: </span>HỢP TÁC XÃ CÔNG NGHIỆP KIM LONG</p>
+                            <p><span>Người đại diện: </span>ĐINH THÙY TRANG</p>
+                            <p><span>Địa chỉ HTX - Nơi kinh doanh:</span><br> 220 NGUYỄN ĐÌNH CHIỂU, P3, TP.TÂN AN, LONG AN</p>
+                            <p><span>Ngành, nghề kinh doanh:</span><br> SẢN XUẤT, KINH DOANH VẬT LIỆU XÂY DỰNG</p>
+                            <p><span>SĐT: </span>0846424520</p>
+                            <p><span>Hotline: </span>02723826742</p>
+                            <p><span>Email: </span>...</p>
+                            <p><span><a href="./gioithieu-lienhe.html">Xem chi tiết</a></span></p>
+                        </div>
+                        <div id="hotro" class="col-6">
+                            <h5>HỖ TRỢ KHÁCH HÀNG</h5>
+                            <a href="">Hướng dẫn mua hàng</a><br><br>
+                            <a href="">Chính sách đổi trả hàng</a><br><br>
+                            <a href="">Chính sách bảo mật</a><br><br>
+                            <a href="">Điều khoản sử dụng</a><br><br>
+                            <a href="">Quyền lợi khách hàng và nhà bán hàng</a>
+                        </div>
+                        <div class="col-lg-12" style="background-color: rgb(252, 100, 33);">
+                            <p>&copy; Copyright 1997 - 2021 | Kim Long | Design & Development by Kim Long industrial cooperative group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="backTop">
+                <div class="ti-angle-up" style="right: 8px;" title="Trở về đầu trang"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!--Optional JavaScript-->
+    <!--jQuery first, then Popper.js, then Bootstrap JS-->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+</body>
+
+</html>
