@@ -179,6 +179,22 @@
 
 
         $(document).ready(function() {
+            //nodel tuyết rơi
+            //link: https://monsterspost.com/20-codepens-to-give-christmas-mood-to-your-website/
+            $(function() {
+                function randomInt(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1) + min);
+                };
+                var limit_flake = 50;
+                setInterval(function() {
+                    let dimension = randomInt(3, 8) + "px";
+                    var flake = "<div class='drop' style='right:" + randomInt(10, window.innerWidth - 20) + "px;width:" + dimension + ";height:" + dimension + "'></div>";
+                    $('body').append(flake);
+                    var list_flake = $('.drop');
+                    if (list_flake.length > limit_flake) list_flake[list_flake.length - 1].remove();
+                }, 200);
+            })
+
             listmcs.forEach(displayMCS);
             listmk.forEach(displayMK);
             listbdc.forEach(displayBDC);
@@ -206,6 +222,36 @@
         <div class="row">
             <div id="left" class="col-1">
                 <img src="../img/cuahang.jpg" alt="cuahang">
+                <div id="snowman">
+                    <div class="front">⛄</div>
+                    <div class="back">☃</div>
+                </div>
+                <!-- <div id="christmas_tree">
+                    <div class="top" style="--j:0">
+                        <div style="--i:0"></div>
+                        <div style="--i:1"></div>
+                        <div style="--i:2"></div>
+                        <div style="--i:3"></div>
+                    </div>
+                    <div class="top" style="--j:1">
+                        <div style="--i:0"></div>
+                        <div style="--i:1"></div>
+                        <div style="--i:2"></div>
+                        <div style="--i:3"></div>
+                    </div>
+                    <div class="top" style="--j:2">
+                        <div style="--i:0"></div>
+                        <div style="--i:1"></div>
+                        <div style="--i:2"></div>
+                        <div style="--i:3"></div>
+                    </div>
+                    <div class="top" style="--j:3">
+                        <div style="--i:0"></div>
+                        <div style="--i:1"></div>
+                        <div style="--i:2"></div>
+                        <div style="--i:3"></div>
+                    </div>
+                </div> -->
             </div>
             <div id="main" class="col-lg-10" style="border: 1px solid red;">
                 <!--header-->
@@ -385,6 +431,7 @@
                 <div class="ti-angle-up"></div>
                 <span>Trở về đầu trang</span>
             </div>
+
         </div>
     </div>
 

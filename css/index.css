@@ -4,6 +4,125 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(https://image.freepik.com/free-vector/christmas-snow-overlay-banner_1048-11097.jpg);
+    background-attachment: fixed;
+    background-color: #1E293B;
+}
+
+.drop {
+    /* tuyết rơi */
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px #FFF;
+    animation: falling 5.5s infinite ease-in;
+}
+
+@keyframes falling {
+    0% {
+        top: -10px;
+        /* opacity: 1; */
+    }
+    10% {
+        transform: translateX(-5px)
+    }
+    20% {
+        transform: translateX(5px)
+    }
+    30% {
+        transform: translateX(-5px)
+    }
+    40% {
+        transform: translateX(5px)
+    }
+    60% {
+        transform: translateX(-5px)
+    }
+    70% {
+        transform: translateX(5px)
+    }
+    80% {
+        transform: translateX(-5px)
+    }
+    90% {
+        transform: translateX(5px)
+    }
+    95% {
+        opacity: 1
+    }
+    100% {
+        top: 95vh;
+        opacity: 0;
+    }
+}
+
+#snowman .front {
+    position: fixed;
+    margin-left: -0.8em;
+    margin-top: 50px;
+    font-size: 5em;
+    animation: animate_snowman_front 3s linear infinite;
+}
+
+#snowman .back {
+    position: fixed;
+    margin-left: -0.8em;
+    margin-top: 50px;
+    font-size: 5em;
+    backface-visibility: hidden;
+    animation: animate_snowman_back 3s linear infinite;
+}
+
+@keyframes animate_snowman_front {
+    0% {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+    100% {
+        transform: ☃ rotateX(-20deg) rotateY(0deg);
+    }
+}
+
+@keyframes animate_snowman_back {
+    0% {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+    100% {
+        transform: ☃ rotateX(-20deg) rotateY(0deg);
+    }
+}
+
+
+/* #snowman::before {
+    content: "";
+    position: fixed;
+    width: 3vmin;
+    height: 3vmin;
+    background: #222;
+    border-radius: 50%;
+    bottom: 65vmin;
+    transform: translate(-200%, 0);
+    box-shadow: 8vmin 0 #222, 4vmin 4.125vmin 0 0.33vmin orange, 4vmin 17vmin #233, 4.5vmin 17.125vmin 0 0.25vmin #233, 4vmin 24vmin #111, 4.25vmin 31vmin 0 0.25vmin #222, 4vmin 0 0 10vmin #fff, 4vmin 3vmin 1vmin 7vmin #aaa, 4vmin 22vmin 0 13vmin #fff, 4vmin 25vmin 2vmin 10vmin #aaa, 4vmin 45vmin 0 17vmin #fff;
+}
+
+#snowman::after {
+    content: "";
+    position: fixed;
+    width: 60vmin;
+    height: 72vmin;
+    bottom: 3vmin;
+    box-shadow: 0 -19vmin 0 -18vmin, 0 -26vmin 0 -22vmin #837, 0 -40vmin 0 -22vmin;
+    border-radius: 18.5vmin 18.5vmin 0 0;
+    transform-origin: top center;
+    transform: translate(-50%, 0) rotate(3deg);
+    background-image: linear-gradient(60deg, transparent 45%, brown 0 50%, transparent 0), linear-gradient(-64deg, transparent 45%, brown 0 50%, transparent 0), linear-gradient(-60deg, transparent 45%, brown 0 50%, transparent 0), linear-gradient(-50deg, transparent 45%, brown 0 54%, transparent 0), linear-gradient(70deg, transparent 45%, brown 0 53%, transparent 0), linear-gradient(23deg, orange 20%, transparent 0), linear-gradient(-88deg, transparent 42%, maroon 0 50%, transparent 0), linear-gradient(75deg, transparent 45%, maroon 0 50%, transparent 0), linear-gradient(85deg, transparent 45%, maroon 0 50%, transparent 0), linear-gradient(95deg, transparent 45%, maroon 0 50%, transparent 0), linear-gradient(110deg, transparent 45%, maroon 0 48%, transparent 0), linear-gradient(80deg, transparent 45%, maroon 0 48%, transparent 0), linear-gradient(102deg, transparent 45%, maroon 0 51%, transparent 0);
+    background-size: 20% 50%, 18% 45%, 9% 11%, 9% 11%, 9% 11%, 16% 20%, 22% 65%, 20% 20%, 20% 25%, 25% 20%, 18% 20%, 22% 22%, 18% 21%;
+    background-position: 90% 50%, 14% 55%, 6% 75%, 5% 73%, 13% 75%, 60% 0%, 102% 92%, 100% 20%, 103% 15%, 109% 19%, 109% 17%, 102.5% 15%, 106% 16%;
+    background-repeat: no-repeat;
+} */
+
 #left img {
     display: inline-block;
     background-attachment: fixed;
@@ -17,6 +136,39 @@
     /* top: -195px; */
     margin-left: -85px;
 }
+
+
+/* #christmas_tree {
+    position: fixed;
+    width: 10%;
+    height: 10%;
+    top: 460px;
+    margin-left: -80px;
+    background: linear-gradient(90deg, #69c069, #77dd77);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(170px) rotateX(30deg);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+    100% {
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+}
+
+#christmas_tree .top {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateY(calc(100px * var(--j)));
+} */
 
 #right img {
     display: inline-block;
@@ -308,7 +460,7 @@
     background-color: rgb(255, 38, 0);
 }
 
-#backTop span {
+#backTop {
     color: black;
     text-decoration: none;
     position: fixed;
@@ -317,7 +469,7 @@
     cursor: pointer;
 }
 
-#backTop span:hover {
+#backTop:hover {
     text-decoration: underline;
 }
 
