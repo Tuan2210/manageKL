@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My Page Title</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        p {
+            font-size: 13px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container"> -->
+    <!-- <h2 class="text-center"> -->
+    <div class="row">
+        <div class="col border-right">
+            <!-- <span class="text-danger">1</span> -->
+            <p class="text-danger font-weight-bold">index.js</p>
+            <div class="border-bottom border-danger">
+                <p>
+                    //npm -v, cài node, cài extension Bootstrap 4 Ultimate Snippets Pack
+                </p>
+                <p>
+                    //npm init -y
+                </p>
+                <p>
+                    //npm i express nodemon ejs aws-sdk multer
+                </p>
+                <p>
+                    //Thêm lệnh start trong script của package.json: "start": "nodemon index.js",
+                </p>
+                <p>
+                    //npm run start
+                </p>
+                <p>
+                    //Tại thư mục gốc của project, tạo folder views => tạo file index.ejs, index.css
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    const express = require('express') <br>
+                    const app = express() <br>
+                    const port = 3000 <br>
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    app.use(express.json({ extended: false })) <br>
+                    app.use(express.static('./views')) <br>
+                    app.set('view engine', 'ejs') <br>
+                    app.set('views', './views') <br>
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    app.listen(port, () => { <br>
+                    console.log('sv is running on port 3000'); <br>
+                    }) <br>
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    // test run port sv <br>
+                    // app.get("/", (req, res) => { <br>
+                    // res.send('Hello World!') <br>
+                    // // return res.render("index"); //index.ejs <br>
+                    // }); <br>
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    // config aws dynamodb <br>
+                    const AWS = require('aws-sdk'); <br>
+                    const config = new AWS.Config({ <br>
+                    accessKeyId: 'AKIA3C6VMUGK52QC7WMV', <br>
+                    secretAccessKey: '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', <br>
+                    region: 'ap-southeast-1' <br>
+                    }) <br>
+                    AWS.config = config <br>
+
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    const docClient = new AWS.DynamoDB.DocumentClient(); <br>
+                    const tableName = 'NhaBao'; <br>
+                    const multer = require('multer'); <br>
+                    const upload = multer(); <br>
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    //-- Render data -- <br>
+                    app.get('/home', (req, res) => { <br>
+                    const params = { <br>
+                    TableName: tableName, <br>
+                    }; <br>
+                    <br>
+                    docClient.scan(params, (err, data) => { <br>
+                    if (err) <br>
+                    res.send('Lỗi: ' + err); <br>
+                    return res.render('index', { nhaBaos: data.Items }); <br>
+                    }); <br>
+                    }) <br>
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    // tới page addBaiBao <br>
+                    app.get('/add', (req, res) => { <br>
+                    return res.render('addBaiBao'); <br>
+                    }) <br>
+
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    //thêm <br>
+                    app.post('/', upload.fields([]), (req, res) => { <br>
+                    const { ma_bao, stt, ten_bao, ten_nhom_tac_gia, chi_so_ISBN, so_trang, nam_xuat_ban, link_url_anh } = req.body; <br>
+                    console.log(req.body); <br>
+                     <br>
+                    const params = { <br>
+                    TableName: tableName, <br>
+                    Item: { <br>
+                    "ma_bao": ma_bao, <br>
+                    "stt": stt, <br>
+                    "ten_bao": ten_bao, <br>
+                    "ten_nhom_tac_gia": ten_nhom_tac_gia, <br>
+                    "chi_so_ISBN": chi_so_ISBN, <br>
+                    "so_trang": so_trang, <br>
+                    "nam_xuat_ban": nam_xuat_ban, <br>
+                    "link_url_anh": link_url_anh, <br>
+                    }, <br>
+                    }; <br>
+                     <br>
+                    docClient.put(params, (err, data) => { <br>
+                    if (err) <br>
+                    return res.send('Lỗi: ' + err); <br>
+                    return res.redirect('/home'); <br>
+                    }) <br>
+                    }) <br>
+                </p>
+            </div>
+            <div class="border-bottom border-danger">
+                <p>
+                    //xóa <br>
+                    app.post('/delete', upload.fields([]), (req, res) => { <br>
+                    const listItems = Object.keys(req.body); <br>
+                    console.log(listItems) <br>
+                    if (listItems.length === 0) <br>
+                    return res.redirect('/home'); <br>
+                     <br>
+                    function onDeleteItem(index) { <br>
+                    const params = { <br>
+                    TableName: tableName, <br>
+                    Key: { <br>
+                    "ma_bao": listItems[index] <br>
+                    } <br>
+                    } <br>
+                     <br>
+                    docClient.delete(params, (err, data) => { <br>
+                    if (err) <br>
+                    return res.send('Lỗi: ' +err); <br>
+                    else { <br>
+                    if (index > 0) <br>
+                    onDeleteItem(index - 1); <br>
+                    else <br>
+                    return res.redirect('/home'); <br>
+                    } <br>
+                    }) <br>
+                    } <br>
+                     <br>
+                    onDeleteItem(listItems.length - 1); <br>
+                    }) <br>
+                </p>
+            </div>
+
+        </div>
+        <div class="col border-right">
+            <!-- <span class="text-danger">2</span> -->
+            <p class="text-danger font-weight-bold">index.ejs</p>
+
+        </div>
+        <div class="col border-right">
+            <!-- <span class="text-danger">3</span> -->
+            <p class="text-danger font-weight-bold">index.css</p>
+            
+        </div>
+        <div class="col">
+            <!-- <span class="text-danger">4</span> -->
+            <p class="text-danger font-weight-bold">addBaiBao.ejs</p>
+            
+        </div>
+    </div>
+    <!-- </h2> -->
+    <!-- </div> -->
+
+    <!--Optional JavaScript-->
+    <!--jQuery first, then Popper.js, then Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
