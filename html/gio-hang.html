@@ -188,7 +188,29 @@
         <div class="col border-right">
             <!-- <span class="text-danger">2</span> -->
             <p class="text-danger font-weight-bold">index.ejs</p>
+            <div class="border-bottom border-danger">
+                <p>
+                    // b-template <br>
+                    link ./index.css <br><br>
+                    style="color: red;">Nhà xuất bản ABZ <br>
+                    p style="color: blue; align-self: center; font-size: 40px;">Danh mục các bài báo <br><br>
+                    a | href="/add"> button class="btn btn-primary">Thêm /button> /a> <br>
+                    form | action="/delete" method="POST" enctype="multipart/form-data" <br>
+                    table | border="1" class="table table-bordered" <br>
+                    tr; th | class="align-middle text-center" //th: tiêu đề cột <br>
+                    <% for (var i=0; i< nhaBaos.length; i++) { %> <br>
+                    tr; td | class="align-middle text-center" <br>
+                    <%=nhaBaos[i].ma_bao%> <br>
+                    img | src="<%=nhaBaos[i].link_url_anh%>" <br>
+                    td; div class="row justify-content-center" <br>
+                    input type="submit" value="Xóa" name="<%=nhaBaos[i].ma_bao%>" class="btn btn-danger align-items-center" <br>
+                    /td; /tr <br>
+                    <% } %> //thẻ đóng của for <br>
+                    /table <br>
+                    /form <br>
 
+                </p>
+            </div>
         </div>
         <div class="col border-right">
             <!-- <span class="text-danger">3</span> -->
