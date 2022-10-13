@@ -194,16 +194,18 @@
                     link ./index.css <br><br>
                     style="color: red;">Nhà xuất bản ABZ <br>
                     p style="color: blue; align-self: center; font-size: 40px;">Danh mục các bài báo <br><br>
-                    a | href="/add"> button class="btn btn-primary">Thêm /button> /a> <br>
-                    form | action="/delete" method="POST" enctype="multipart/form-data" <br>
-                    table | border="1" class="table table-bordered" <br>
+                    a | href="/add"> button class="btn btn-primary">Thêm /button> /a> <br><br>
+                    form | action="/delete" method="POST" enctype="multipart/form-data" <br><br>
+                    table | border="1" class="table table-bordered" <br><br>
                     tr; th | class="align-middle text-center" //th: tiêu đề cột <br>
-                    <% for (var i=0; i< nhaBaos.length; i++) { %> <br>
-                    tr; td | class="align-middle text-center" <br>
+                    <% for (var i=0; i< nhaBaos.length; i++) { %> //for sau tr; th <br><br> 
+                    tr; td | class="align-middle text-center" <br><br>
                     <%=nhaBaos[i].ma_bao%> <br>
-                    img | src="<%=nhaBaos[i].link_url_anh%>" <br>
-                    td; div class="row justify-content-center" <br>
-                    input type="submit" value="Xóa" name="<%=nhaBaos[i].ma_bao%>" class="btn btn-danger align-items-center" <br>
+                    img | src="<%=nhaBaos[i].link_url_anh%>" <br><br>
+                    td; div class="row justify-content-center" <br><br>
+                    input type="submit" value="Xóa" name="<%=nhaBaos[i].ma_bao%>" class="btn btn-danger align-items-center" <br><br>
+                    /// checkbox <br>
+                    /// input type="checkbox" name="<%=nhaBaos[i].ma_bao%>" <br><br>
                     /td; /tr <br>
                     <% } %> //thẻ đóng của for <br>
                     /table <br>
@@ -251,11 +253,11 @@
                 <p>
                     // b-template <br>
                     h3 Thêm bài báo <br>
-                    form action="/" method="POST" class="col-3 was-validated" enctype="multipart/form-data" novalidate <br>
-                    input type="text" name="ma_bao" placeholder="Nhập mã báo" id="" class="form-control" required <br>
-                    input type="number" min="1" name="stt" placeholder="Nhập stt" id="" class="form-control" required <br>
+                    form action="/" method="POST" class="col-3 was-validated" enctype="multipart/form-data" novalidate <br><br>
+                    input type="text" name="ma_bao" placeholder="Nhập mã báo" id="" class="form-control" required <br><br>
+                    input type="number" min="1" name="stt" placeholder="Nhập stt" id="" class="form-control" required <br><br>
                     input type="text" name="link_url_anh" placeholder="Nhập link ảnh" id="" class="form-control" required <br>
-                    br <br>
+                    < br> <br><br>
                     input type="submit" value="Thêm" <br>
                     /form <br>
                     a href="/home"> < button>Trở về< /button>< /a
